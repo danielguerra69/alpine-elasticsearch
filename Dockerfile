@@ -11,6 +11,7 @@ ADD bin /usr/share/java/elasticsearch/bin
 ADD config /usr/share/java/elasticsearch/config
 RUN chown -R elastico:elastico /usr/share/java/elasticsearch /var/lib/elasticsearch
 RUN sed -i "s/:\/bin/:\/bin:\/usr\/share\/java\/elasticsearch\/bin/" /etc/profile
+VOLUME ["/usr/share/java/elasticsearch/config"]
 VOLUME ["/usr/share/java/elasticsearch/data"]
 EXPOSE 9200 9300
 ENTRYPOINT ["docker-entrypoint.sh"]
