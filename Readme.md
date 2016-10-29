@@ -1,7 +1,7 @@
 ![Elasticsearch](https://www.runabove.com/images/apps/elasticsearch-and-kibana.png)
 
 # About
-Elasticsearch on alpine linux. Small size 70mb compressed.
+Elasticsearch on alpine linux
 > [wikipedia.org/wiki/Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch)
 
 ## Tags
@@ -9,6 +9,7 @@ latest  elasticsearch 2.4.1
 5.0.0   elasticsearch 5.0.0
 2.4.1   elasticsearch 2.4.1
 2.4.0   elasticsearch 2.4.0
+2.2     elasticsearch 2.2.2
 2.2     elasticsearch 2.2
 2.0     elasticsearch 2.0
 1.6     elasticsearch 1.6
@@ -16,7 +17,7 @@ latest  elasticsearch 2.4.1
 ## Usage
 
 ```bash
-docker run -p 9300:9300 -d danielguerrra/alpine-elasticsearch
+docker run -p 9200:9200 -d danielguerrra/alpine-elasticsearch:5.0.0
 docker run -d -v "$PWD/esdata":/usr/share/java/elasticsearch/data \
 danielguerrra/alpine-elasticsearch -Des.node.name="TestNode"
 ```
