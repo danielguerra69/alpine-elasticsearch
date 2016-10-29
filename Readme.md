@@ -1,14 +1,17 @@
-![elasticsearch-logo](https://static-www.elastic.co/assets/blt6050efb80ceabd47/elastic-logo (2).svg)
+![Elasticsearch](https://www.runabove.com/images/apps/elasticsearch-and-kibana.png)
 
 # About
 Elasticsearch on alpine linux. Small size 70mb compressed.
 > [wikipedia.org/wiki/Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch)
 
-## Supported tags
-latest - Elasticsearch 2.4.1
-2.4.0 - Elasticsearch 2.4.0
-2.4.1 - Elasticsearch 2.4.1
-5.0.0 - Elasticsearch 5.0.0
+## Tags
+latest  elasticsearch 2.4.1
+5.0.0   elasticsearch 5.0.0
+2.4.1   elasticsearch 2.4.1
+2.4.0   elasticsearch 2.4.0
+2.2     elasticsearch 2.2
+2.0     elasticsearch 2.0
+1.6     elasticsearch 1.6
 
 ## Usage
 
@@ -23,5 +26,3 @@ or advanced
 ```bash
 docker run -d  --env MAX_OPEN_FILES=65535 --env MAX_LOCKED_MEMORY=unlimited --env ES_JAVA_OPTS=-server \ --hostname=elasticsearch-master  --name elasticsearch-master  danielguerrra/alpine-elasticsearch \ -Des.network.bind_host=elasticsearch-master --cluster.name=mycluster --node.name=elasticsearch-master \ --discovery.zen.ping.multicast.enabled=false --network.host=elasticsearch-master
 ```
-
-## Documents
