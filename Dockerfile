@@ -1,7 +1,7 @@
 FROM alpine:3.4
 MAINTAINER Daniel Guerra <daniel.guerra69@gmail.com>
 ENV ELASTIC_VER=5.0.0
-RUN apk --update --no-cache add openjdk8-jre ca-certificates
+RUN apk --update --no-cache add openjdk8-jre ca-certificates openssl
 WORKDIR /usr/share
 RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-$ELASTIC_VER.tar.gz -O - | tar xvfz - \
     && mv elasticsearch-$ELASTIC_VER elasticsearch && cd elasticsearch && rm -rf config bin
