@@ -1,3 +1,5 @@
+![elasticsearch-logo](https://static-www.elastic.co/assets/blt6050efb80ceabd47/elastic-logo (2).svg)
+
 # About
 Elasticsearch 2.4.1 on alpine linux
 The extracted size is 130M
