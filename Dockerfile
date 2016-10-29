@@ -1,11 +1,12 @@
 FROM alpine:3.4
 MAINTAINER Daniel Guerra <daniel.guerra69@gmail.com>
 ENV ELASTIC_VER=1.6.0
-RUN apk --update --no-cache add openjdk8-jre ca-certificates openssl
-WORKDIR /usr/share
-RUN wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.6.0.tar.gz -O - | tar xvfz - \
-    && mv elasticsearch-$ELASTIC_VER elasticsearch && cd elasticsearch && rm -rf config bin
-RUN apk del ca-certificates openssl && rm  -rf /tmp/* /var/cache/apk/*
+RUN apk --update --no-cache add openjdk8-jre ca-certificates openssl \
+&& cd /usr/share \
+&& wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.6.0.tar.gz -O - | tar xvfz - \
+&& mv elasticsearch-$ELASTIC_VER elasticsearch && cd elasticsearch && rm -rf config bin \
+&& apk del ca-certificates openssl \
+&& rm  -rf /tmp/* /var/cache/apk/*
 ADD bin /usr/share/elasticsearch/bin
 ADD config /usr/share/elasticsearch/config
 RUN mkdir /usr/share/elasticsearch/plugins /usr/share/elasticsearch/data
