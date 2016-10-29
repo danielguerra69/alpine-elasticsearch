@@ -4,6 +4,9 @@
 Elasticsearch on alpine linux
 > [wikipedia.org/wiki/Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch)
 
+For kibana on alpine check.
+[danielguerra/alpine-kibana](https://hub.docker.com/r/danielguerra/alpine-kibana/)
+
 ## Tags
 latest  elasticsearch 2.4.1
 5.0.0   elasticsearch 5.0.0
