@@ -2,6 +2,8 @@
 
 # About
 Elasticsearch on alpine linux
+For kibana on alpine check:
+[danielguerra/alpine-kibana](https://hub.docker.com/r/danielguerra/alpine-kibana/)
 
 
 ## Tags
@@ -16,7 +18,7 @@ latest  elasticsearch 2.4.1
 ## Usage
 
 ```bash
-docker run -p 9300:9300 -d danielguerrra/alpine-elasticsearch
+docker run -p 9200:9200 -p 9300:9300 -d danielguerrra/alpine-elasticsearch:5.0.0
 docker run -d -v "$PWD/esdata":/usr/share/java/elasticsearch/data \
 danielguerrra/alpine-elasticsearch -Des.node.name="TestNode"
 ```
