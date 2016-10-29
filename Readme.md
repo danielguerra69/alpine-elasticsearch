@@ -1,8 +1,17 @@
-![elasticsearch-logo](https://static-www.elastic.co/assets/blt6050efb80ceabd47/elastic-logo (2).svg)
+![Elasticsearch](https://www.runabove.com/images/apps/elasticsearch-and-kibana.png)
 
 # About
-Elasticsearch 2.4.1 on alpine linux
-The extracted size is 130M
+Elasticsearch on alpine linux
+
+
+## Tags
+latest  elasticsearch 2.4.1
+5.0.0   elasticsearch 5.0.0
+2.4.1   elasticsearch 2.4.1
+2.4.0   elasticsearch 2.4.0
+2.2     elasticsearch 2.2
+2.0     elasticsearch 2.0
+1.6     elasticsearch 1.6
 
 ## Usage
 
