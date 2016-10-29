@@ -12,9 +12,7 @@ fi
 if [ "$1" = 'elasticsearch' -a "$(id -u)" = '0' ]; then
 	# Change the ownership of /usr/share/elasticsearch/data to elasticsearch
 	chown -R elastico:elastico /usr/share/elasticsearch/data
-  echo "$@" > /bin/elastico
-  chmod a+x /bin/elastico
-	set -- su - elastico -s /bin/sh -c elastico
+	set -- su - elastico -s /bin/sh -c elasticsearch -- "$@"
 	#exec su elasticsearch "$BASH_SOURCE" "$@"
 fi
 
