@@ -3,7 +3,7 @@ MAINTAINER Daniel Guerra <daniel.guerra69@gmail.com>
 ENV ELASTIC_VER=1.6.0
 RUN apk --update --no-cache add openjdk8-jre ca-certificates openssl \
 && cd /usr/share \
-&& wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.6.0.tar.gz -O - | tar xvfz - \
+&& wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-$ELASTIC_VER.tar.gz -O - | tar xvfz - \
 && mv elasticsearch-$ELASTIC_VER elasticsearch && cd elasticsearch && rm -rf config bin \
 && apk del ca-certificates openssl \
 && rm  -rf /tmp/* /var/cache/apk/*
