@@ -18,5 +18,6 @@ VOLUME ["/usr/share/elasticsearch/plugins"]
 VOLUME ["/usr/share/elasticsearch/config"]
 VOLUME ["/usr/share/elasticsearch/data"]
 EXPOSE 9200 9300
+ENV ES_JAVA_OPTS="-Xms512m -Xmx512m"
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["elasticsearch"]
