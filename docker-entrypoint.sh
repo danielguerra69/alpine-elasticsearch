@@ -1,7 +1,6 @@
 #!/bin/sh
 
 set -e
-export ES_JAVA_OPTS="-Xms512m -Xmx512m" 
 # Add elasticsearch as command if needed
 if [ "${1:0:1}" = '-' ]; then
 	set -- elasticsearch "$@"
