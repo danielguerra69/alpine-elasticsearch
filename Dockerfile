@@ -8,7 +8,6 @@ RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-$ELA
 RUN apk del ca-certificates openssl && rm  -rf /tmp/* /var/cache/apk/*
 ADD bin /usr/share/elasticsearch/bin
 ADD config /usr/share/elasticsearch/config
-RUN mkdir /usr/share/elasticsearch/plugins /usr/share/elasticsearch/data
 RUN addgroup elastico
 RUN adduser  -G elastico -s /bin/false -D elastico
 RUN chown -R elastico:elastico /usr/share/elasticsearch
@@ -18,5 +17,5 @@ VOLUME ["/usr/share/elasticsearch/plugins"]
 VOLUME ["/usr/share/elasticsearch/config"]
 VOLUME ["/usr/share/elasticsearch/data"]
 EXPOSE 9200 9300
-ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["elasticsearch"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+CMD ["/usr/share/elasticsearch/bin/elasticsearch"]
