@@ -3,7 +3,7 @@ MAINTAINER Daniel Guerra <daniel.guerra69@gmail.com>
 RUN apk --update --no-cache add elasticsearch
 WORKDIR /usr/share
 RUN rm  -rf /tmp/* /var/cache/apk/*
-ADD config /etc/elasticsearch/elasticsearcnh.yml
+ADD config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
 RUN mkdir -p /usr/share/java/elasticsearch/plugins /usr/share/java/elasticsearch/config /usr/share/java/elasticsearch/data
 RUN cp /etc/elasticsearch/* /usr/share/java/elasticsearch/config
 RUN chown -R elastico:elastico /usr/share/java/elasticsearch
