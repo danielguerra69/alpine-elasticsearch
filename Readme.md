@@ -8,15 +8,16 @@ For kibana on alpine check.
 [danielguerra/alpine-kibana](https://hub.docker.com/r/danielguerra/alpine-kibana/)
 
 ## Tags
-latest  elasticsearch 2.4.4
-5.2.2   elasticsearch 5.2.2
-5.0.0   elasticsearch 5.0.0
-2.4.1   elasticsearch 2.4.1
-2.4.0   elasticsearch 2.4.0
-2.2     elasticsearch 2.2.2
-2.2     elasticsearch 2.2
-2.0     elasticsearch 2.0
-1.6     elasticsearch 1.6
+latest   elasticsearch 2.4.4
+edge-apk elasticsearch 6.1
+5.2.2    elasticsearch 5.2.2
+5.0.0    elasticsearch 5.0.0
+2.4.1    elasticsearch 2.4.1
+2.4.0    elasticsearch 2.4.0
+2.2      elasticsearch 2.2.2
+2.2      elasticsearch 2.2
+2.0      elasticsearch 2.0
+1.6      elasticsearch 1.6
 
 ## Usage
 
