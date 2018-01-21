@@ -1,23 +1,17 @@
-FROM alpine:3.4
+FROM alpine:edge
 MAINTAINER Daniel Guerra <daniel.guerra69@gmail.com>
-ENV ELASTIC_VER=5.0.0
-RUN apk --update --no-cache add openjdk8-jre ca-certificates openssl
+RUN apk --update --no-cache add elasticsearch
 WORKDIR /usr/share
-RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-$ELASTIC_VER.tar.gz -O - | tar xvfz - \
-    && mv elasticsearch-$ELASTIC_VER elasticsearch && cd elasticsearch && rm -rf config bin
-RUN apk del ca-certificates openssl && rm  -rf /tmp/* /var/cache/apk/*
-ADD bin /usr/share/elasticsearch/bin
-ADD config /usr/share/elasticsearch/config
-RUN mkdir /usr/share/elasticsearch/plugins /usr/share/elasticsearch/data
-RUN addgroup elastico
-RUN adduser  -G elastico -s /bin/false -D elastico
-RUN chown -R elastico:elastico /usr/share/elasticsearch
-RUN sed -i "s/:\/bin/:\/bin:\/usr\/share\/elasticsearch\/bin/" /etc/profile
+RUN rm  -rf /tmp/* /var/cache/apk/*
+ADD config /etc/elasticsearch/elasticsearcnh.yml
+RUN mkdir -p /usr/share/java/elasticsearch/plugins /usr/share/java/elasticsearch/config /usr/share/java/elasticsearch/data
+RUN cp /etc/elasticsearch/* /usr/share/java/elasticsearch/config
+RUN chown -R elastico:elastico /usr/share/java/elasticsearch
 ADD docker-entrypoint.sh /usr/sbin
-VOLUME ["/usr/share/elasticsearch/plugins"]
-VOLUME ["/usr/share/elasticsearch/config"]
-VOLUME ["/usr/share/elasticsearch/data"]
+VOLUME ["/usr/share/java/elasticsearch/plugins"]
+VOLUME ["/usr/share/java/elasticsearch/config"]
+VOLUME ["/usr/share/java/elasticsearch/data"]
 EXPOSE 9200 9300
-ENV ES_JAVA_OPTS="-Xms512m -Xmx512m"
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["elasticsearch"]
+USER elastico
+CMD ["/usr/share/java/elasticsearch/bin/elasticsearch"]
