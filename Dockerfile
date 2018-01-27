@@ -8,9 +8,7 @@ RUN mkdir -p /usr/share/java/elasticsearch/plugins /usr/share/java/elasticsearch
 RUN cp /etc/elasticsearch/* /usr/share/java/elasticsearch/config
 RUN chown -R elastico:elastico /usr/share/java/elasticsearch
 ADD docker-entrypoint.sh /usr/sbin
-VOLUME ["/usr/share/java/elasticsearch/plugins"]
-VOLUME ["/usr/share/java/elasticsearch/config"]
-VOLUME ["/usr/share/java/elasticsearch/data"]
+VOLUME ["/usr/share/java/elasticsearch/plugins","/usr/share/java/elasticsearch/config","/usr/share/java/elasticsearch/data","/dump"]
 EXPOSE 9200 9300
 ENTRYPOINT ["docker-entrypoint.sh"]
 USER elastico
