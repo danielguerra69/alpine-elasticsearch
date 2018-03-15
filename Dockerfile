@@ -1,6 +1,6 @@
 FROM alpine:edge
 MAINTAINER Daniel Guerra <daniel.guerra69@gmail.com>
-RUN apk --update --no-cache add elasticsearch
+RUN apk --update --no-cache add elasticsearch elasticsearch-lang-painless
 WORKDIR /usr/share
 RUN rm  -rf /tmp/* /var/cache/apk/*
 ADD config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
