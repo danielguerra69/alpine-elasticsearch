@@ -1,5 +1,31 @@
-network.host: 0.0.0.0
-# this value is required because we set "network.host"
-# be sure to modify it appropriately for a production cluster deployment
+cluster:
+    name: ${CLUSTER_NAME}
+
+node:
+    name: ${HOSTNAME}
+    master: ${NODE_MASTER}
+    data: ${NODE_DATA}
+
+path:
+    data: /usr/share/java/elasticsearch/data
+    logs: /usr/share/java/elasticsearch/logs
+
+bootstrap.memory_lock: true
+
+network.host: _eth0_
+
 discovery.zen.minimum_master_nodes: 1
+discovery.zen.fd.ping_timeout: 30s
+discovery.zen.ping.unicast.hosts: ${UNICAST_HOSTS}
+
+action.destructive_requires_name: true
+
+gateway.expected_nodes: 2
+gateway.recover_after_time: 5m
+
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+http.cors.allow-methods: OPTIONS, HEAD, GET, POST, PUT, DELETE
+http.cors.allow-headers: X-Requested-With,X-Auth-Token,Content-Type, Content-Length
+
 path.repo: ["/dump"]

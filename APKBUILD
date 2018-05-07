@@ -1,7 +1,7 @@
 # Contributor: Jakub Jirutka <jakub@jirutka.cz>
 # Maintainer: Jakub Jirutka <jakub@jirutka.cz>
 pkgname=elasticsearch
-pkgver=5.6.9
+pkgver=6.2.4
 pkgrel=0
 pkgdesc="Open Source, Distributed, RESTful Search Engine"
 url="https://www.elastic.co/products/elasticsearch"
@@ -21,13 +21,17 @@ builddir="$srcdir/$pkgname-$pkgver"
 default_module=transport-netty4
 _modules="
 	aggs-matrix-stats
+	analysis-common
 	ingest-common
 	lang-expression
 	lang-mustache
 	lang-painless
+	mapper-extras
 	parent-join
 	percolator
 	reindex
+	repository-url
+	tribe
 	"
 for _mod in $_modules; do
 	subpackages="$subpackages $pkgname-$_mod:_${_mod//-/_}"
@@ -90,7 +94,7 @@ _builtin_module() {
 	install -m644 -t "$destdir" "$builddir"/modules/$name/*
 }
 
-sha512sums="4e61a4c5f79d0439a414f1e9361f855cdb2f79322cf592bad43132605922fb8ded6368b01e05ef6bcbee49911943c2a3b6be5fd6d0900abddfe03c736cca96d6  elasticsearch-5.6.9.tar.gz
+sha512sums="9e6c0de8ed0d9e27fdd18ef7bada376af5a8680bb7a4f4d805926da456b349cee731ba90328b5eda5f0e62fa3f00f34646bf1c2b6c662d055f4be338d0690941  elasticsearch-6.2.4.tar.gz
 dc916861497d4a589d6b3ab70d90ff9970e4d57003ed82d08c5f90dec337f995dcabf2556b7a27ade926e846ad435392f7845acfe9280dce17b4c172d85328ae  elasticsearch.initd
 2ab1baf1b5c8782f3f371ba221aadd3e841abc62175f0b1ddcfc68d711e2370465124e076f8cc2e549c25a1da9db8c90172b2f410bd6bbe4153f0e831620b6ba  elasticsearch.confd
 6de81485cdc059afef58382862e4155482463fde0b604aaa8dbe904c778b841467c4a383a5e54acd09e3436f1fb7be9923e001fb77bd3d7894e113a5e0f4036b  README.alpine"
