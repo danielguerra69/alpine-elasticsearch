@@ -1,8 +1,6 @@
 FROM danielguerra/alpine-sdk-build:edge as builder
 RUN docker-entrypoint.sh
-WORKDIR /tmp/aports/community/elasticsearch
-RUN sed -i "s/6\.1\.1/6\.2\.4/g"  APKBUILD
-RUN abuild checksum
+ADD APKBUILD /tmp/aports/community/elasticsearch
 RUN build community elasticsearch
 
 FROM alpine:edge
