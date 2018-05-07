@@ -11,7 +11,7 @@ COPY --from=builder /home/sdk/.abuild /.abuild
 RUN find /.abuild -name "*.pub" -exec cp {} /etc/apk/keys \;
 COPY --from=builder /home/sdk/packages /packages
 WORKDIR /packages/community/x86_64/
-RUN apk --update --no-cache add elasticsearch-6.2.4-r0.apk elasticsearch-lang-painless-6.2.4-r0.apk
+RUN apk --update --no-cache add elasticsearch-5.6.9-r0.apk elasticsearch-lang-painless-5.6.9-r0.apk
 WORKDIR /usr/share
 RUN rm  -rf /tmp/* /var/cache/apk/*
 ADD config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
