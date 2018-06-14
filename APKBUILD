@@ -11,7 +11,7 @@ depends="java-jna-native>=4.1 openjdk8-jre bash"
 makedepends=""
 install="$pkgname.pre-install"
 subpackages="$pkgname-doc"
-source="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-$pkgver.tar.gz
+source="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-$pkgver.tar.gz
 	$pkgname.initd
 	$pkgname.confd
 	README.alpine
@@ -94,7 +94,7 @@ _builtin_module() {
 	install -m644 -t "$destdir" "$builddir"/modules/$name/*
 }
 
-sha512sums="edc6ae1fa54753b1dd5842f64988364131cd073a66f716c6f12430cca46cef4d989bcec3eb18b1f6cc0a6c0ed55fef7ece91b0ae40345929660fed1338206a92  elasticsearch-6.3.0.tar.gz
+sha512sums="679c7b86590b7d006476ddaef2c3eb285d444d30f44877a7b34a0d6bb8ea043477944e9c0d6c4d1d85557aa6b3b724bc8b1025d95af26cf0f19a73b5f701a2aa  elasticsearch-oss-6.3.0.tar.gz
 dc916861497d4a589d6b3ab70d90ff9970e4d57003ed82d08c5f90dec337f995dcabf2556b7a27ade926e846ad435392f7845acfe9280dce17b4c172d85328ae  elasticsearch.initd
 2ab1baf1b5c8782f3f371ba221aadd3e841abc62175f0b1ddcfc68d711e2370465124e076f8cc2e549c25a1da9db8c90172b2f410bd6bbe4153f0e831620b6ba  elasticsearch.confd
 6de81485cdc059afef58382862e4155482463fde0b604aaa8dbe904c778b841467c4a383a5e54acd09e3436f1fb7be9923e001fb77bd3d7894e113a5e0f4036b  README.alpine"
