@@ -8,7 +8,9 @@ For kibana on alpine check.
 [danielguerra/alpine-kibana](https://hub.docker.com/r/danielguerra/alpine-kibana/)
 
 ## Tags
-latest   elasticsearch 6.1.1
+latest   elasticsearch 6.3.0
+6.2.4    elasticsearch 6.2.4
+6.1.1    elasticsearch 6.1.1
 edge-apk elasticsearch 6.1.1
 5.2.2    elasticsearch 5.2.2
 5.0.0    elasticsearch 5.0.0
@@ -22,13 +24,7 @@ edge-apk elasticsearch 6.1.1
 ## Usage
 
 ```bash
-docker run -p 9200:9200 -d danielguerrra/alpine-elasticsearch:5.0.0
+docker run -p 9200:9200 -d danielguerrra/alpine-elasticsearch:6.2.4
 docker run -d -v "$PWD/esdata":/usr/share/java/elasticsearch/data \
-danielguerrra/alpine-elasticsearch -Des.node.name="TestNode"
-```
-
-or advanced
-
-```bash
-docker run -d  --env MAX_OPEN_FILES=65535 --env MAX_LOCKED_MEMORY=unlimited --env ES_JAVA_OPTS=-server \ --hostname=elasticsearch-master  --name elasticsearch-master  danielguerrra/alpine-elasticsearch \ -Des.network.bind_host=elasticsearch-master --cluster.name=mycluster --node.name=elasticsearch-master \ --discovery.zen.ping.multicast.enabled=false --network.host=elasticsearch-master
+danielguerrra/alpine-elasticsearch"
 ```
