@@ -10,7 +10,6 @@ license="Apache-2.0"
 depends="java-jna-native>=4.1 openjdk8-jre bash"
 makedepends=""
 install="$pkgname.pre-install"
-subpackages="$pkgname-doc"
 source="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-$pkgver.tar.gz
 	$pkgname.initd
 	$pkgname.confd
@@ -21,17 +20,13 @@ builddir="$srcdir/$pkgname-$pkgver"
 default_module=transport-netty4
 _modules="
 	aggs-matrix-stats
-	analysis-common
 	ingest-common
 	lang-expression
 	lang-mustache
 	lang-painless
-	mapper-extras
 	parent-join
 	percolator
 	reindex
-	repository-url
-	tribe
 	"
 for _mod in $_modules; do
 	subpackages="$subpackages $pkgname-$_mod:_${_mod//-/_}"
