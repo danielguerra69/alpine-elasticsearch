@@ -29,3 +29,4 @@ http.cors.allow-methods: OPTIONS, HEAD, GET, POST, PUT, DELETE
 http.cors.allow-headers: X-Requested-With,X-Auth-Token,Content-Type, Content-Length
 
 path.repo: ["/dump"]
+action.auto_create_index: .security,.monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*
