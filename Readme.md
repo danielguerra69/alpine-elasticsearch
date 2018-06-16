@@ -8,7 +8,7 @@ For kibana on alpine check.
 [danielguerra/alpine-kibana](https://hub.docker.com/r/danielguerra/alpine-kibana/)
 
 ## Tags
-latest   elasticsearch 6.2.4
+latest   elasticsearch 6.3.0
 6.2.4    elasticsearch 6.2.4
 6.1.1    elasticsearch 6.1.1
 edge-apk elasticsearch 6.1.1
