@@ -12,8 +12,6 @@ latest   elasticsearch 6.3.0
 6.2.4    elasticsearch 6.2.4
 6.1.1    elasticsearch 6.1.1
 edge-apk elasticsearch 6.1.1
-5.2.2    elasticsearch 5.2.2
-5.0.0    elasticsearch 5.0.0
 2.4.1    elasticsearch 2.4.1
 2.4.0    elasticsearch 2.4.0
 2.2      elasticsearch 2.2.2
