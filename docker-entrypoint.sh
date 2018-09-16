@@ -10,10 +10,11 @@ fi
 # Drop root privileges if we are running elasticsearch
 # allow the container to be started with `--user`
 if [ "$1" = 'elasticsearch' -a "$(id -u)" = '0' ]; then
+    mkdir /usr/share/java/elasticsearch/logs
 	# Change the ownership of /usr/share/elasticsearch/data to elasticsearch
-	chown -R elastico:elastico /usr/share/java/elasticsearch/data
-  echo "$@" > /bin/elastico
-  chmod a+x /bin/elastico
+	chown -R elastico:elastico /usr/share/java/elasticsearch/data /usr/share/java/elasticsearch/logs
+    echo "$@" > /bin/elastico
+    chmod a+x /bin/elastico
 	set -- su - elastico -s /bin/sh -c elastico
 	#exec su elasticsearch "$BASH_SOURCE" "$@"
 fi
